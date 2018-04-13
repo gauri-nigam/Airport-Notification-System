@@ -6,17 +6,17 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#78b7f2" height="45.0" layoutX="32.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
-      <Button fx:id="BtnProb" layoutX="250.0" layoutY="287.0" mnemonicParsing="false" onAction="#ProblemPage" text="Problem" textFill="#dd0c0c" />
-      <Label layoutX="104.0" layoutY="36.0" text="Welcome To the System" />
-      <Button fx:id="BtnSignOut" layoutX="43.0" layoutY="287.0" mnemonicParsing="false" onAction="#SignOut" text="SignOut" textFill="#309718" />
-      <Label layoutX="248.0" layoutY="338.0" text="Click to add a Problem">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#78b7f2" height="45.0" layoutX="109.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
+      <Button fx:id="BtnProb" layoutX="329.0" layoutY="346.0" mnemonicParsing="false" onAction="#ProblemPage" text="Problem" textFill="#dd0c0c" />
+      <Label layoutX="152.0" layoutY="50.0" text="Welcome To the System" />
+      <Button fx:id="BtnSignOut" layoutX="82.0" layoutY="346.0" mnemonicParsing="false" onAction="#SignOut" text="SignOut" textFill="#309718" />
+      <Label layoutX="319.0" layoutY="399.0" text="Click to add a Problem">
          <font>
             <Font size="11.0" />
          </font></Label>
-      <Button fx:id="BtnResolve" layoutX="151.0" layoutY="287.0" mnemonicParsing="false" onAction="#ResolveNow" text="Resolve" />
+      <Button fx:id="BtnResolve" layoutX="208.0" layoutY="346.0" mnemonicParsing="false" onAction="#ResolveNow" text="Resolve" />
    </children>
 
 </Pane>

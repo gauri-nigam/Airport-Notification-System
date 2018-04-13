@@ -1,15 +1,13 @@
 package sample;
 
+import com.mysql.jdbc.log.NullLogger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,13 +15,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
 public class Controller implements Initializable {
 
     public Button BtnLogin;
     public TextField UserID;
     public PasswordField PassField;
     public Label LblDispMsg;
+    public TextArea NotifyFlight;
+    public TextArea NotifyText;
+    public Button BtnManualNotify;
+    public Problem p1=new Problem();
+    public String FID;
+    public String Statement;
 
 
 
@@ -33,11 +36,15 @@ public class Controller implements Initializable {
 
     }
 
-    public void userLogin(ActionEvent actionEvent)throws Exception {
+    public void userLogin(ActionEvent actionEvent)throws IOException {
         ArrayList<String> Usernames = new ArrayList<>();
         ArrayList<String> Passwords = new ArrayList<>();
-        Usernames.add("akash");
-        Passwords.add("akash");
+        DBconnect obj=new DBconnect();
+
+        Usernames=obj.getData("users","Username");
+        Passwords=obj.getData("users","Password");
+
+
 
         int flag=1;
         int flag1=1;
@@ -67,26 +74,27 @@ public class Controller implements Initializable {
         if(flag==0 && flag1==0) {
             LblDispMsg.setText("Logged in successfully");
 
-            Parent root1= FXMLLoader.load(getClass().getResource("sample2.fxml"));
-            Scene scene2=new Scene(root1, 400, 400);
-
             Stage window=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-
+            Parent root1= null;
+        try {
+            root1 = FXMLLoader.load(getClass().getResource("sample2.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene2= new Scene(root1, 600, 600);
             window.setScene(scene2);
             window.show();
 
-        }
+            Airport objAir=new Airport();
+            objAir.initializeData();
+           // p1=new Problem();
+            p1.generateProblem(objAir);
+            FID=p1.FlightID;
 
-        else//if the login is unsuccessful
-        {
-            LblDispMsg.setText("Unsuccessful");//prob: output if rest else code is commented out
-//            Parent root2= FXMLLoader.load(getClass().getResource("sample.fxml"));
-//            Scene scene1=new Scene(root2, 400, 400);
-//
-//            Stage window=(Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//
-//            window.setScene(scene1);
-//            window.show();
+            Statement=p1.Statement;
+            System.out.println( FID);
+//           System.out.println( p1.Statement);
+
 
         }
 
@@ -106,12 +114,41 @@ public class Controller implements Initializable {
 
     public void ProblemPage(ActionEvent actionEvent)throws Exception{
 
-        Parent root4 = FXMLLoader.load(getClass().getResource("sample3.fxml"));
-        Scene scene3 = new Scene(root4, 400, 400);
+        Parent root4 = null;
+        try
+        {
+            root4=FXMLLoader.load(getClass().getResource("sample3.fxml"));
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        Scene scene3 = new Scene(root4, 600, 600);
 
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(scene3);
         window.show();
     }
+
+
+
+    public void manualResolve(ActionEvent actionEvent) {
+        String Fid;
+        String FlightMsg;
+        Fid=NotifyFlight.getText();
+        FlightMsg=NotifyText.getText();
+        Problem p2=new Problem();
+        p2.resolveProblem(Fid,FlightMsg);
+        //System.out.println(Fid);
+       // System.out.println(FlightMsg);
+    }
+
+    public void ResolveNow(ActionEvent actionEvent) {
+        System.out.println(FID);
+        Problem p3=new Problem();
+        p3.resolveProblem(FID, Statement);
+    }
 }
+

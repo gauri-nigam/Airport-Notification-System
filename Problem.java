@@ -1,6 +1,7 @@
 package sample;
 
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Problem {
@@ -11,8 +12,12 @@ public class Problem {
 
     Problem()
     {
-        Statement=null;
-        FlightID=null;
+    }
+
+    Problem(String Statement, String FlightID)
+    {
+        this.Statement=Statement;
+        this.FlightID=FlightID;
     }
 
 
@@ -24,7 +29,6 @@ public class Problem {
         Airlines A1=Ap.AIR.get(n);
 
         int n1=rand.nextInt(A1.flt.size());
-       // System.out.println(n1);
         Flight F1=A1.flt.get(n1);
         FlightID=F1.FlightID;
 
@@ -41,6 +45,22 @@ public class Problem {
         }
 
 
+    }
+
+    protected void resolveProblem(String FID, String Stmnt)
+    {
+
+        this.Statement=Stmnt;
+        this.FlightID=FID;
+        System.out.println(FlightID);
+        ArrayList<String> EmailIDs  = new ArrayList<>();
+        DBconnect obj=new DBconnect();
+        EmailIDs=obj.getData(FlightID,"Email ID");
+       // EmailIDs.add("akash.dholaria@sitpune.edu.in");
+        System.out.println(FlightID);
+       System.out.println(EmailIDs.get(0));
+        JavaMail objMail=new JavaMail();
+        objMail.sendMail(Statement,EmailIDs);
     }
 
 }

@@ -1,6 +1,7 @@
 package sample;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DBconnect {
     private Connection con;
@@ -19,23 +20,23 @@ public class DBconnect {
         }
     }
 
-    public void getData(String flightID)
-    {
-        try{
-
-            String query ="select * from "+flightID;
-            rs =st.executeQuery(query);
-            System.out.println("Records from the Database:");
-            while(rs.next())
-            {
-                String name=rs.getString("Username");
-                System.out.println(name);
+    public ArrayList getData(String table, String Column) {
+        ArrayList<String> data = null;
+        try {
+            data = new ArrayList<>();
+            String query = "select * from " + table;
+            rs = st.executeQuery(query);
+            //System.out.println("Records from the Database:");
+            while (rs.next()) {
+                String d = rs.getString(Column);
+                data.add(d);
             }
 
-        }catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex);
         }
+
+        return data;
     }
 
 
