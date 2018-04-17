@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBconnect {
-    private Connection con;
+    public Connection con;
     private Statement st;
     private ResultSet rs;
 

@@ -14,15 +14,14 @@ public class Airport {
         JET.AirlineID=2;
         VIS=new Airlines();
         VIS.AirlineID=3;
-        IND.flt.add(new Flight("IND106"));
-//        IND.flt.add(new Flight("6E-356"));
-//        JET.flt.add(new Flight("JT-222"));
+        IND.flt.add(new Flight("IND106","MUM"));
+        JET.flt.add(new Flight("JET506","DEL"));
 //        JET.flt.add(new Flight("JT-999"));
-//        VIS.flt.add(new Flight("VI-870"));
+        VIS.flt.add(new Flight("VIS306","RAJ"));
 //        VIS.flt.add(new Flight("VI-402"));
         AIR.add(IND);
-      //  AIR.add(JET);
-     //   AIR.add(VIS);
+        AIR.add(JET);
+        AIR.add(VIS);
     }
 
 }

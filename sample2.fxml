@@ -2,21 +2,28 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#78b7f2" height="45.0" layoutX="109.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
-      <Button fx:id="BtnProb" layoutX="329.0" layoutY="346.0" mnemonicParsing="false" onAction="#ProblemPage" text="Problem" textFill="#dd0c0c" />
-      <Label layoutX="152.0" layoutY="50.0" text="Welcome To the System" />
-      <Button fx:id="BtnSignOut" layoutX="82.0" layoutY="346.0" mnemonicParsing="false" onAction="#SignOut" text="SignOut" textFill="#309718" />
-      <Label layoutX="319.0" layoutY="399.0" text="Click to add a Problem">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#78b7f2" height="45.0" layoutX="132.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
+      <Button fx:id="BtnProb" layoutX="250.0" layoutY="453.0" mnemonicParsing="false" onAction="#ProblemPage" text="Problem" textFill="#dd0c0c" />
+      <Label layoutX="212.0" layoutY="54.0" text="Welcome To the System">
+         <font>
+            <Font name="Century" size="16.0" />
+         </font></Label>
+      <Button fx:id="BtnSignOut" layoutX="511.0" layoutY="16.0" mnemonicParsing="false" onAction="#SignOut" text="SignOut" textFill="#309718" />
+      <Label layoutX="245.0" layoutY="498.0" text="Click to add a Problem">
          <font>
             <Font size="11.0" />
          </font></Label>
-      <Button fx:id="BtnResolve" layoutX="208.0" layoutY="346.0" mnemonicParsing="false" onAction="#ResolveNow" text="Resolve" />
+      <Button fx:id="BtnResolve" layoutX="413.0" layoutY="401.0" mnemonicParsing="false" onAction="#ResolveNow" text="Resolve" />
+      <TableView fx:id="flightTable" editable="true" layoutX="53.0" layoutY="129.0" prefHeight="236.0" prefWidth="177.0" />
+      <TextArea fx:id="displayProblem" layoutX="341.0" layoutY="165.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 
 </Pane>

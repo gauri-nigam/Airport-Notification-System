@@ -5,11 +5,13 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller3">
     <children>
         <TextArea fx:id="NotifyText" layoutX="76.0" layoutY="182.0" prefHeight="126.0" prefWidth="359.0" promptText="Enter Your Message" />
         <Label alignment="CENTER" layoutX="173.0" layoutY="45.0" prefHeight="27.0" prefWidth="147.0" text="Manual Problems" textAlignment="CENTER" textFill="#2620c6" />
         <TextArea fx:id="NotifyFlight" layoutX="157.0" layoutY="103.0" prefHeight="27.0" prefWidth="180.0" promptText="Flight Number" />
         <Button fx:id="BtnManualNotify" layoutX="219.0" layoutY="341.0" mnemonicParsing="false" onAction="#manualResolve" text="Notify" />
+      <Button layoutX="360.0" layoutY="341.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="435.0" layoutY="20.0" mnemonicParsing="false" text="Sign out" />
     </children>
 </AnchorPane>
