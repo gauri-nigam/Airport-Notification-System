@@ -2,28 +2,37 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#78b7f2" height="45.0" layoutX="132.0" layoutY="41.0" stroke="BLACK" strokeType="INSIDE" width="337.0" />
-      <Button fx:id="BtnProb" layoutX="250.0" layoutY="453.0" mnemonicParsing="false" onAction="#ProblemPage" text="Problem" textFill="#dd0c0c" />
-      <Label layoutX="212.0" layoutY="54.0" text="Welcome To the System">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#78b7f2" height="87.0" layoutX="5.0" layoutY="55.0" stroke="BLACK" strokeType="INSIDE" width="587.0" />
+      <Button fx:id="BtnProb" layoutX="260.0" layoutY="447.0" mnemonicParsing="false" onAction="#ProblemPage" text="Problem" textFill="#dd0c0c">
          <font>
-            <Font name="Century" size="16.0" />
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Label layoutX="12.0" layoutY="55.0" prefHeight="87.0" prefWidth="578.0" text="Welcome To Chattrapati Shivaji International Airport">
+         <font>
+            <Font name="Cambria" size="24.0" />
          </font></Label>
-      <Button fx:id="BtnSignOut" layoutX="511.0" layoutY="16.0" mnemonicParsing="false" onAction="#SignOut" text="SignOut" textFill="#309718" />
-      <Label layoutX="245.0" layoutY="498.0" text="Click to add a Problem">
+      <Button fx:id="BtnSignOut" layoutX="482.0" layoutY="14.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="19.0" prefWidth="96.0" text="SignOut" textAlignment="CENTER" textFill="#309718">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Label layoutX="246.0" layoutY="492.0" prefHeight="19.0" prefWidth="131.0" text="Click to add a Problem">
          <font>
             <Font size="11.0" />
          </font></Label>
-      <Button fx:id="BtnResolve" layoutX="413.0" layoutY="401.0" mnemonicParsing="false" onAction="#ResolveNow" text="Resolve" />
-      <TableView fx:id="flightTable" editable="true" layoutX="53.0" layoutY="129.0" prefHeight="236.0" prefWidth="177.0" />
-      <TextArea fx:id="displayProblem" layoutX="341.0" layoutY="165.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="BtnResolve" layoutX="269.0" layoutY="376.0" mnemonicParsing="false" onAction="#ResolveNow" text="Notify">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Button>
+      <Label fx:id="DispProblem" layoutX="80.0" layoutY="131.0" prefHeight="207.0" prefWidth="409.0" text="Label">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font></Label>
    </children>
 
 </Pane>

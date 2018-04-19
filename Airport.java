@@ -14,7 +14,7 @@ public class Airport {
         JET.AirlineID=2;
         VIS=new Airlines();
         VIS.AirlineID=3;
-        IND.flt.add(new Flight("IND106","MUM"));
+        IND.flt.add(new Flight("IND106","AMD"));
         JET.flt.add(new Flight("JET506","DEL"));
 //        JET.flt.add(new Flight("JT-999"));
         VIS.flt.add(new Flight("VIS306","RAJ"));

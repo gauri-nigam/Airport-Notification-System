@@ -1,7 +1,7 @@
 package sample;
 
 
-import com.sun.rowset.internal.InsertRow;
+//import com.sun.rowset.internal.InsertRow;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -65,7 +65,7 @@ public class Problem {
         }
         else{
             Time=rand.nextInt(5)+1;
-            Statement="Your flight " + FlightID + "to "+to+" is Delayed by " +Time + " hours. Sorry for the inconvenience caused";
+            Statement="Your flight " + FlightID + " to "+to+" is Delayed by " +Time + " hours. \nSorry for the inconvenience caused";
 
             String query="insert into problem(FlightId,Statement)" + "values(?,?)";
             try {
@@ -77,22 +77,23 @@ public class Problem {
                 e.printStackTrace();
             }
 
+
         }
 
 
     }
 
     protected void resolveProblem(String FID, String Stmnt)
-    //protected void resolveProblem()
+
     {
-        System.out.println(FID+Stmnt);
+
         this.Statement=Stmnt;
         this.FlightID=FID;
-        System.out.println(FlightID);
+
         ArrayList<String> EmailIDs  = new ArrayList<>();
         DBconnect obj=new DBconnect();
         EmailIDs=obj.getData(FlightID,"Email ID");
-       // EmailIDs.add("akash.dholaria@sitpune.edu.in");
+
 
 
         System.out.println(FlightID);

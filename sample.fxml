@@ -4,18 +4,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="39.0" layoutX="97.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" width="267.0" />
-        <Label alignment="CENTER" layoutX="108.0" layoutY="27.0" prefHeight="39.0" prefWidth="245.0" text="Airport Notification System" textAlignment="CENTER" />
-        <Label layoutX="66.0" layoutY="114.0" text="Login to access the Notification System" />
-        <TextField fx:id="UserID" layoutX="96.0" layoutY="190.0" onAction="#userLogin" promptText="Enter your username" />
-        <PasswordField fx:id="PassField" layoutX="96.0" layoutY="242.0" promptText="Enter the password" />
-        <Button fx:id="BtnLogin" layoutX="177.0" layoutY="298.0" mnemonicParsing="false" onAction="#userLogin" text="Login" />
-        <Label fx:id="LblDispMsg" layoutX="139.0" layoutY="302.0" prefHeight="17.0" prefWidth="131.0" />
+      <ImageView fitHeight="257.0" fitWidth="498.0" layoutX="51.0" layoutY="21.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/download.jpg" />
+         </image>
+      </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fa9ff" height="39.0" layoutX="177.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" width="267.0" />
+        <Label alignment="CENTER" layoutX="189.0" layoutY="27.0" prefHeight="39.0" prefWidth="245.0" text="Airport Notification System" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+        <Label layoutX="156.0" layoutY="174.0" text="Login to access the Notification System">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+        <TextField fx:id="UserID" layoutX="186.0" layoutY="280.0" onAction="#userLogin" promptText="Enter your username">
+         <effect>
+            <Glow />
+         </effect></TextField>
+        <PasswordField fx:id="PassField" layoutX="186.0" layoutY="332.0" promptText="Enter the password">
+         <effect>
+            <Glow />
+         </effect></PasswordField>
+        <Button fx:id="BtnLogin" layoutX="257.0" layoutY="438.0" mnemonicParsing="false" onAction="#userLogin" text="Login">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font></Button>
+        <Label fx:id="LblDispMsg" layoutX="218.0" layoutY="384.0" prefHeight="27.0" prefWidth="205.0" />
     </children>
   
 </Pane>

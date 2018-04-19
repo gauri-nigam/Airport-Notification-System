@@ -20,9 +20,11 @@ import java.util.ResourceBundle;
 public class Controller2 implements Initializable {
 
     public TableView<Flight> flightTable;
+    public Label DispProblem;
     Problem p1=new Problem();
     String flightID, statement;
-    ObservableList<Flight> data=null;
+
+  //  ObservableList<Flight> data=null;
     private TableColumn<Flight,String> flightIDColumn;
     private TableColumn<Flight,String> timeColumn;
 
@@ -35,15 +37,15 @@ public class Controller2 implements Initializable {
         p1.generateProblem(objAir);
         System.out.println(p1.FlightID);
         genProb(p1.FlightID, p1.Statement);
-        data=FXCollections.observableArrayList();
+  //      data=FXCollections.observableArrayList();
 
-        for(Airlines air: objAir.AIR)
-        {
-            for(Flight flght: air.flt)
-            {
-                data.add(flght);
-            }
-        }
+//        for(Airlines air: objAir.AIR)
+//        {
+//            for(Flight flght: air.flt)
+//            {
+//                data.add(flght);
+//            }
+//        }
 
 //        flightIDColumn.setCellValueFactory(new PropertyValueFactory<>("flightID"));
    //     timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
@@ -52,19 +54,21 @@ public class Controller2 implements Initializable {
 //        flightTable.setItems(data);
 //        flightTable.getColumns().addAll(flightIDColumn, timeColumn);
 
+    DispProblem.setText(p1.Statement);
+
 
     }
     
     public  void genProb(String fid, String msg) {
         flightID=fid;
         statement=msg;
-        System.out.println(flightID);
-        System.out.println(statement);
+    //    System.out.println(flightID);
+     //   System.out.println(statement);
 
     }
 
     public void ResolveNow(ActionEvent actionEvent) {
-        System.out.println(flightID);
+       // System.out.println(flightID);
         p1.resolveProblem(flightID,statement);
     }
     public void ProblemPage(ActionEvent actionEvent)throws Exception{

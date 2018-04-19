@@ -16,7 +16,7 @@ public class Main extends Application
     public void start(Stage primaryStage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Scene scene1=new Scene(root, 500, 500);
+        Scene scene1=new Scene(root, 600, 600);
 //        apnaStage=primaryStage;
         primaryStage.setTitle("Airport Notification System");
         primaryStage.setScene(scene1);
